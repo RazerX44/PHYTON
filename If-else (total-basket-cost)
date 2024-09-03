@@ -8,4 +8,4 @@ else:
   shipping_cost = customer_basket_weight * shipping_cost_per_kg
   total_customer_basket_cost = shipping_cost + customer_basket_cost
 
-print("Total basket cost including shipping is " + str(total_customer_basket_cost))
+print("Total basket cost including shipping is " + str(customer_basket_cost))
