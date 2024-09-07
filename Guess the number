@@ -1,0 +1,21 @@
+import random # импортируем библиотеку random
+
+number = random.randint(1,100)
+print(number)
+
+# предложить пользователю угадать число
+while True:
+    user_number = int(input('Введите число: '))
+    #print(user_number)
+
+    # сравнить число с загаданным и вывести результат
+    # победа если число равняется загаданному подсказка если число не равняется загаданному
+    if number == user_number:
+        print('Победа!')
+        break
+    elif number < user_number:
+        print('Ваше число больше загаданного')
+    else:
+        print('Ваше число меньше задуманного')
+
+# ЦИКЛ while true - пока верно пользователь играет
