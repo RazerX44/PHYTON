@@ -1,0 +1,8 @@
+#Дан список, нужно вывести только уникальные значения из списка
+
+numbers = [1, 1, 2, 3, 3, 4, 4, 4, 5, 1, 2, 7]
+result = []
+for number in numbers:
+    if numbers.count(number) == 1:
+        result.append(number)
+print(numbers)
