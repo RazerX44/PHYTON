@@ -1,0 +1,28 @@
+# Задаем выдуманный код для кодирования данных
+code = {
+    "A": "001",
+    "B": "010",
+    "C": "011",
+    "D": "100",
+    "E": "101",
+    "F": "110",
+    "G": "111"
+}
+
+def encode_data(data):
+    """Функция кодирования данных"""
+    encoded = ""
+    for char in data:
+        encoded += code[char.upper()]
+    return encoded
+
+def decode_data(data):
+    """Функция декодирования данных"""
+    decoded = ""
+    while data:
+        for char, sequence in code.items():
+            if data.startswith(sequence):
+                decoded += char
+                data = data[len(sequence):]
+                break
+    return decoded
