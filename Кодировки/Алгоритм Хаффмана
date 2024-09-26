@@ -1,0 +1,35 @@
+class HuffmanNode:
+    def __init__(self, char=None, freq=0, left=None, right=None):
+        self.char = char
+        self.freq = freq
+        self.left = left
+        self.right = right
+
+    def __lt__(self, other):
+        return self.freq < other.freq
+
+def decode(code, root):
+    decoded_str = ""
+    node = root
+    for bit in code:
+        if bit == "0":
+            node = node.left
+        else:
+            node = node.right
+
+        if node.char is not None:
+            decoded_str += node.char
+            node = root
+
+    return decoded_str
+
+# Пример использования функции decode:
+if __name__ == "__main__":
+    # Создаем вершину дерева Хаффмана и раскодируем данные
+    root = HuffmanNode(left=HuffmanNode(left=HuffmanNode(char='a', freq=2), right=HuffmanNode(char='b', freq=3), freq=5),
+                       right=HuffmanNode(left=HuffmanNode(char='c', freq=4), right=HuffmanNode(char='d', freq=5), freq=9),
+                       freq=14)
+
+    code = "1101111110101010111010"
+    decoded_str = decode(code, root)
+    print(decoded_str)
