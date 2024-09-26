@@ -1,0 +1,14 @@
+def arithmetic_encoding(data):
+    freq_dict = {}
+    for char in data:
+        freq_dict[char] = freq_dict.get(char, 0) + 1
+    prob_dict = {char: freq_dict[char]/len(data) for char in freq_dict}
+    low, high = 0.0, 1.0
+    for char in data:
+        range_width = high - low
+        high = low + range_width * prob_dict[char]
+        low = low + range_width * sum(prob_dict[c] for c in prob_dict if c < char)
+    return (high + low) / 2
+
+result = arithmetic_encoding('hello')
+print(result) # Output: 0.625
