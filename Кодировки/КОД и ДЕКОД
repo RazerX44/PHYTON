@@ -1,0 +1,49 @@
+Следующий пример кода на Python, который позволяет закодировать сообщение с использованием выдуманного кода:
+
+def encode_message(message):
+    coded_message = ''
+    for letter in message:
+        if letter == 'a':
+            coded_message += '134'
+        elif letter == 'b':
+            coded_message += '52'
+        elif letter == 'c':
+            coded_message += '999'
+        # Добавьте свои правила кодирования для других букв
+        
+    return coded_message
+
+Пример использования
+
+message = 'abc'
+coded_message = encode_message(message)
+print(coded_message) # Выводит: 13452999
+
+Функция encode_message принимает строку message и возвращает закодированную версию этой строки, используя выдуманный код. 
+В примере, который мы предоставили, буква «a» была заменена на «134», буква «b» — на «52», а буква «c» — на «999». 
+Вы можете добавить свои правила кодирования для других букв, что позволит вам закодировать сообщение любой сложности.
+
+ДЕКОДИРОВАНИЕ
+
+def decode_message(coded_message):
+    decoded_message = ''
+    i = 0
+    while i < len(coded_message):
+        if coded_message[i:i+3] == '134':
+            decoded_message += 'a'
+            i += 3
+        elif coded_message[i:i+2] == '52':
+            decoded_message += 'b'
+            i += 2
+        elif coded_message[i:i+3] == '999':
+            decoded_message += 'c'
+            i += 3
+        # Добавьте свои правила декодирования для других букв
+        
+    return decoded_message
+
+
+ПРИМЕР ИСПОЛЬЗОВАНИЯ
+
+decoded_message = decode_message(coded_message)
+print(decoded_message) # Выводит: abc
